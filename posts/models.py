@@ -30,7 +30,7 @@ class Post(models.Model):
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     comment_number = models.IntegerField(default=0)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
-    status = models.IntegerField(default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
 
     class Meta:
