@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post, Categories
 
 
@@ -27,3 +27,16 @@ def categories_view(request, category_name):
     }
 
     return render(request, 'categories.html', context)
+
+
+class PostDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+
+        get_posts = Post.objects.all()
+        post = get_object_or_404(get_posts, slug=slug)
+        context = {
+            'post': post,
+        }
+
+        return render(request, 'post_detail.html', context)
