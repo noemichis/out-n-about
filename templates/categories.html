@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        {% for category in categories_list %}
+        <div class="col-3">
+            <a href="{% url 'categories' category.category_name %}">
+                <div class="text-center">
+                    <h1 class="category-name">{{ category.category_name }}</h1>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h2>{{ selected_category.category_name }}</h2>
+            {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                                class="card-img-top">
+                        </div>
+                        <h2 class="title">{{ post.title }}</h2>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
