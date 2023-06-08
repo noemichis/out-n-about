@@ -26,7 +26,9 @@
                             <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
                                 class="card-img-top">
                         </div>
-                        <h2 class="title">{{ post.title }}</h2>
+                        <a href="{% url 'post_detail' post.slug %}">
+                            <h2 class="title">{{ post.title }}</h2>
+                        </a>
                     </div>
 
                 </div>
