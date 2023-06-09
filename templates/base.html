@@ -20,38 +20,13 @@
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Categories</a>
-        </li>
-    </ul>
-    <ul>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Register</a>
-        </li>
+
     </ul>
 </nav>
 
-{% block categories %}
-<div class="container">
-    <div class="row">
-        {% for category in categories_list %}
-        <div class="col-3">
-            <a href="{% url 'categories' category.category_name %}">
-                <div class="text-center">
-                    <h1 class="category-name">{{ category.category_name }}</h1>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-{% endblock categories %}
-
 <body>
     {% block content %}
+
     {% endblock content %}
 </body>
 
