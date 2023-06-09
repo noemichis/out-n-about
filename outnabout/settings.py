@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['out-n-about.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['out-n-about.herokuapp.com', 'localhost', '8000-noemichis-outnabout-7zdeumg6xs7.ws-eu99.gitpod.io']
 
 
 # Application definition
@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'posts.context_processors.categories_list',
             ],
         },
     },

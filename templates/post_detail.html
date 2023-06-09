@@ -2,20 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        {% for category in categories_list %}
-        <div class="col-3">
-            <a href="{% url 'categories' category.category_name %}">
-                <div class="text-center">
-                    <h1 class="category-name">{{ category.category_name }}</h1>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-
     <h1>{{ post.category }}</h1>
-
     <div class="row">
         <div class="col-12 mt-3 left">
             <h2 class="title">{{ post.title }}</h2>
