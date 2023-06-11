@@ -31,8 +31,10 @@ class PostDetail(View):
 
         get_posts = Post.objects.all()
         post = get_object_or_404(get_posts, slug=slug)
+        comments = post.comments.filter(approved=True)
         context = {
             'post': post,
+            'comments': comments,
         }
 
         return render(request, 'post_detail.html', context)
