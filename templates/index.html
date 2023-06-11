@@ -4,22 +4,27 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mt-3 left">
-            {% for post in post_list %}
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="image-container">
-                            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                                class="card-img-top">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                                    class="card-img-top">
+                            </div>
+                            <a href="{% url 'post_detail' post.slug %}">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                            </a>
+                            <div class="card-text">
+                                {{ post.post_summary }}
+                            </div>
                         </div>
-                        <a href="{% url 'post_detail' post.slug %}">
-                            <h2 class="title">{{ post.title }}</h2>
-                        </a>
-                    </div>
 
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </div>
