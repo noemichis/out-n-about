@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 
@@ -30,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['out-n-about.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['out-n-about.herokuapp.com', 'localhost', '8000-noemichis-outnabout-7zdeumg6xs7.ws-eu99.gitpod.io']
 
 
 # Application definition
