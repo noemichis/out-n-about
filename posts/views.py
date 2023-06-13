@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib import messages
 from .models import Post, Categories, Comment
 from .forms import CommentForm
 
@@ -56,6 +57,7 @@ class PostDetail(View):
             comment.related_post = post
             comment.author = request.user
             comment.save()
+            messages.success(request, 'Comment successfully submitted!')
         else:
             comment_form = CommentForm()
 
