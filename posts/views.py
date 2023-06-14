@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
+from django.views.generic.edit import DeleteView
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Post, Categories, Comment
 from .forms import CommentForm
 
@@ -68,3 +70,12 @@ class PostDetail(View):
         }
 
         return render(request, 'post_detail.html', context)
+
+
+@login_required
+def comment_delete(request, id):
+    comment = get_object_or_404(Comment, id=id)
+    comment.delete()
+    messages.success(request, 'Comment successfully deleted')
+
+    return redirect('post_detail', slug=comment.related_post.slug)
