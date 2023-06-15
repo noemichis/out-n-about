@@ -94,3 +94,13 @@ def comment_delete(request, id):
     messages.success(request, 'Comment successfully deleted')
 
     return redirect('post_detail', slug=comment.related_post.slug)
+
+
+class CommentEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Allows users to edit and update their comments
+    """
+    model = Comment
+    template_name = 'comment_edit.html'
+    form_class = CommentForm
+    success_message = "Comment successfully updated"
