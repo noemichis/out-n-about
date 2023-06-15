@@ -1,13 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import UpdateView
+from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
-from .models import Post, Categories, Comment
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import *
 from .forms import CommentForm
 
 
 def index(request):
+    """
+    Renders the index page
+    """
     get_posts = Post.objects.all()
     context = {
         'post_list': get_posts
@@ -17,6 +23,10 @@ def index(request):
 
 
 def categories_view(request, category_name):
+    """
+    Creates the categories objects
+    and renders them to selected pages
+    """
     selected_category = Categories.objects.get(category_name=category_name)
     categories_post = Post.objects.filter(
         category=selected_category
@@ -29,7 +39,7 @@ def categories_view(request, category_name):
     return render(request, 'categories.html', context)
 
 
-class PostDetail(View):
+class PostDetail(View, SuccessMessageMixin):
     """
     Renders the post details Page
     """
@@ -54,26 +64,31 @@ class PostDetail(View):
         comments = post.comments.filter(approved=True)
         comment_form = CommentForm(data=request.POST)
 
+        context = {
+            'post': post,
+            'comments': comments,
+            'comment_form': comment_form,
+        }
+
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.related_post = post
             comment.author = request.user
             comment.save()
             messages.success(request, 'Comment successfully submitted!')
+
+            return redirect(reverse('post_detail', args=(post.slug,)))
         else:
             comment_form = CommentForm()
-
-        context = {
-            'post': post,
-            'comments': comments,
-            'comment_form': CommentForm(),
-        }
 
         return render(request, 'post_detail.html', context)
 
 
 @login_required
 def comment_delete(request, id):
+    """
+    Allows users to delete their own comments
+    """
     comment = get_object_or_404(Comment, id=id)
     comment.delete()
     messages.success(request, 'Comment successfully deleted')
