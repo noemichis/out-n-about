@@ -37,6 +37,12 @@ a {
     color: #fff !important;
 }
 
+.nav-link:hover {
+    cursor: pointer;
+    color: #ffffffcb !important;
+    transform: scale(1.2);
+}
+
 #logo {
     max-width: 200px;
 }
@@ -49,4 +55,22 @@ a {
     color: #003b21;
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    background-color: #003b21;
+    color: #fff;
+}
+
+
+footer i {
+    color: #fff;
+}
+
+footer i:hover {
+    cursor: pointer;
+    color: #ffffffcb;
+    transform: scale(1.2);
 }
