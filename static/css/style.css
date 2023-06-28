@@ -43,6 +43,11 @@ a {
     transform: scale(1.2);
 }
 
+nav .active {
+    color: #ffffffcb !important;
+    transform: scale(1.2);
+}
+
 #logo {
     max-width: 200px;
 }
@@ -55,6 +60,23 @@ a {
     color: #003b21;
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+/* Category slide */
+
+.category {
+    border: 2px solid #003b21;
+}
+
+.category *:hover {
+    cursor: pointer;
+    background-color: #003b21;
+    color: #fff;
+}
+
+div .active {
+    background-color: #003b21;
+    color: #fff;
 }
 
 /* Footer */

@@ -84,12 +84,21 @@
 
     {% block categories %}
     <div class="container">
-        <div class="row">
+        <div class="d-flex flex-row">
             {% for category in categories_list %}
-            <div class="col-3">
+            <div class="category col-3">
                 <a href="{% url 'categories' category.category_name %}">
                     <div class="text-center">
-                        <h1 class="category-name">{{ category.category_name }}</h1>
+                        <h4 class="category-name">{{ category.category_name }}</h4>
+                        {% if category.category_name == 'Outdoors' %}
+                        <i class="fa-solid fa-campground fa-lg"></i>
+                        {% elif category.category_name == 'Food' %}
+                        <i class="fa-solid fa-utensils fa-lg"></i>
+                        {% elif category.category_name == 'Events' %}
+                        <i class="fa-solid fa-wand-magic-sparkles fa-lg"></i>
+                        {% else %}
+                        <i class="fa-solid fa-landmark fa-lg"></i>
+                        {% endif %}
                     </div>
                 </a>
             </div>
