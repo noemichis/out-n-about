@@ -1,0 +1,52 @@
+/* Import Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Architects+Daughter&display=swap');
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bold;
+}
+
+body {
+    color: #003b21;
+    font-family: 'Abel', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #003b21;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #003b21;
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+#logo {
+    max-width: 200px;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+}
+
+.dropdown-item {
+    color: #003b21;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
