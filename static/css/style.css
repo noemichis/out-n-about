@@ -10,15 +10,24 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    color: #003b21;
+    font-family: 'Abel', sans-serif;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+
+}
+
 h1,
 h2 {
     font-family: 'Architects Daughter', cursive;
     font-weight: bold;
-}
-
-body {
-    color: #003b21;
-    font-family: 'Abel', sans-serif;
 }
 
 a {
