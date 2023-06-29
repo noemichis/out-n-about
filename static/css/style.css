@@ -26,6 +26,35 @@ a {
     color: #003b21;
 }
 
+.btn {
+    margin: 2px 0 5px 0;
+    background-color: #003b21;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #ffffffcb;
+    color: #003b21;
+    border: 1px solid #002213;
+    font-weight: bold;
+    box-shadow: 1px 2px 10px #003b21;
+}
+
+.btn-danger {
+    background-color: #7e0101;
+}
+
+.btn-danger:hover {
+    background-color: #ffffffcb;
+    color: #7e0101;
+    box-shadow: 1px 2px 10px #7e0101;
+}
+
+
+hr {
+    color: #003b21;
+}
 
 /* Navbar */
 
@@ -110,6 +139,31 @@ nav .active {
     object-fit: cover;
 }
 
+/* Post view CSS */
+
+/* .image-container {
+    max-width: 70%;
+} */
+
+/* Override crispy form control with custom CSS */
+
+textarea.form-control {
+    max-height: 100px;
+}
+
+.form-control {
+    border-color: #003b21;
+}
+
+.form-control:focus {
+    border-color: #003b21;
+    box-shadow: 1px 0 5px #003b21;
+}
+
+label.requiredField {
+    display: none !important;
+}
+
 /* Footer */
 
 footer {
@@ -126,4 +180,12 @@ footer i:hover {
     cursor: pointer;
     color: #ffffffcb;
     transform: scale(1.2);
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 960px) {
+    .post-container {
+        max-width: 820px;
+    }
 }
