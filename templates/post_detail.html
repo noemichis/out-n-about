@@ -43,10 +43,10 @@
                 </div>
                 {% if request.user == comment.author %}
                 <div class="col-6 col-sm-4">
-                    <a href="{% url 'comment_edit' comment.id %}" role="button" class="btn">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{% url 'comment_edit' comment.id %}" role="button" class="btn btn-success">
+                        Edit</a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#delete-comment"><i class="fa-solid fa-trash-can"></i></button>
+                        data-bs-target="#delete-comment">Delete</button>
                     <div class="modal" id="delete-comment" tabindex="-1">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -83,7 +83,7 @@
                 <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn">Submit</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </form>
             </div>
         </div>

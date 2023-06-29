@@ -37,26 +37,22 @@ a {
 
 .btn {
     margin: 2px 0 5px 0;
-    background-color: #003b21;
     color: #fff;
     border: none;
 }
 
-.btn:hover {
-    background-color: #ffffffcb;
-    color: #003b21;
-    border: 1px solid #002213;
-    font-weight: bold;
+.btn-success {
+    background-color: #003b21;
+}
+
+
+.btn-success:hover {
+    background-color: #007e47;
     box-shadow: 1px 2px 10px #003b21;
 }
 
-.btn-danger {
-    background-color: #7e0101;
-}
-
 .btn-danger:hover {
-    background-color: #ffffffcb;
-    color: #7e0101;
+    background-color: #f10000;
     box-shadow: 1px 2px 10px #7e0101;
 }
 
