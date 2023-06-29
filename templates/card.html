@@ -1,0 +1,28 @@
+{% load static %}
+{% block cards %}
+<div class="col">
+    <div class="card h-100">
+        {% if 'placeholder' in post.post_image.url %}
+        <img src="{% static 'images/test.jpg' %}" class="card-img-top p-2">
+        {% else %}
+        <img src="{{ post.post_image.url }}" class="card-img-top p-2">
+        {% endif %}
+        <div class="card-body">
+            <a href="{% url 'post_detail' post.slug %}">
+                <h2 class="card-title">{{ post.title }}</h2>
+            </a>
+            <div class="card-text mt-3">
+                <h6>{{ post.post_summary | slice:":100" }}</h6>
+            </div>
+        </div>
+        <div class="card-footer p-3">
+            <span>{{ post.author }} | </span>
+            <span>{{ post.date_posted | date:"SHORT_DATETIME_FORMAT" }} | </span>
+            <span>{{ post.comments.count }} <i class="fa-regular fa-comment fa-xs"></i> |
+            </span>
+            <span><i class="fa-regular fa-thumbs-up"></i></span>
+        </div>
+    </div>
+</div>
+
+{% endblock cards %}
