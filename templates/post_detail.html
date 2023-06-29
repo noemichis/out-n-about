@@ -51,8 +51,9 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Delete comment</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <h5 class="modal-title">Delete comment?</h5>
+                                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal"
+                                        aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -62,7 +63,7 @@
                                 <div class="modal-footer">
                                     <a href="{% url 'comment_delete' comment.id %}" class="btn btn-danger"
                                         aria-label="Delete Comment">Delete</a>
-                                    <button type="button" class="btn-secondary p-1"
+                                    <button type="button" class="btn btn-secondary mx-1"
                                         data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
