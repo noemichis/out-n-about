@@ -26,9 +26,11 @@ a {
     color: #003b21;
 }
 
+
 /* Navbar */
 
 .navbar {
+    padding: 10px 10px 5px 20px;
     background-color: #003b21;
     font-size: 1.25rem;
 }
@@ -40,12 +42,13 @@ a {
 .nav-link:hover {
     cursor: pointer;
     color: #ffffffcb !important;
-    transform: scale(1.2);
+    transform: scale(1.07);
 }
 
 nav .active {
     color: #ffffffcb !important;
-    transform: scale(1.2);
+    font-weight: bold;
+    transform: scale(1.03);
 }
 
 #logo {
@@ -74,9 +77,37 @@ nav .active {
     color: #fff;
 }
 
-div .active {
+/* div .active {
     background-color: #003b21;
     color: #fff;
+} */
+
+/* Custom CSS for the cards */
+
+.card {
+    cursor: pointer;
+    border: 1px solid #003b21;
+    box-shadow: 1px 2px 10px #003b21;
+}
+
+.card:hover {
+    transform: translateY(-.15em) scale(1.01);
+    box-shadow: 3px 5px 20px #003b21;
+}
+
+.card-title:hover {
+    color: #002213;
+}
+
+.card-footer {
+    background-color: #003b21;
+    color: #fff;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vh;
+    object-fit: cover;
 }
 
 /* Footer */
