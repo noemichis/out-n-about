@@ -111,6 +111,10 @@ nav .active {
     color: #fff;
 }
 
+.category-title {
+    font-size: calc(2rem + 1.5vw);
+}
+
 /* div .active {
     background-color: #003b21;
     color: #fff;
@@ -168,6 +172,19 @@ textarea.form-control {
 label.requiredField {
     display: none !important;
 }
+
+/* Override accounts form input */
+
+input {
+    width: 100%;
+    padding: 2.5px;
+    border: 1px solid #003b21;
+}
+
+input#id_remember {
+    width: auto;
+}
+
 
 /* Footer */
 
