@@ -30,6 +30,10 @@ h2 {
     font-weight: bold;
 }
 
+h1 {
+    font-size: calc(2rem + 1.5vw);
+}
+
 a {
     text-decoration: none;
     color: #003b21;
@@ -59,6 +63,16 @@ a {
 
 hr {
     color: #003b21;
+}
+
+.bg-position {
+    background-image: url(https://res.cloudinary.com/dn2p3swhy/image/upload/v1688085448/hero_mqv9xg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 5px 6px 20px rgba(0, 59, 33, 0.78),
+        3px 6px 30px inset rgba(0, 59, 33, 0.82),
+        1px 1px 50px inset rgba(0, 0, 0, 0.64);
 }
 
 /* Navbar */
@@ -105,14 +119,7 @@ nav .active {
 #hero {
     width: 100%;
     height: 90vh;
-    background-image: url(https://res.cloudinary.com/dn2p3swhy/image/upload/v1688085448/hero_mqv9xg.jpg);
-    background-size: cover;
-    background-position: center center;
-    box-shadow: 5px 6px 20px rgba(0, 59, 33, 0.78),
-        3px 6px 30px inset rgba(0, 59, 33, 0.82),
-        1px 1px 50px inset rgba(0, 0, 0, 0.64);
     position: relative;
-    ;
 }
 
 #hero hr {
@@ -178,17 +185,41 @@ nav .active {
     border: 2px solid #ffffffcb;
 }
 
+/* Top image across all pages */
+
+#top-img {
+    width: 100%;
+    height: 30vh;
+}
+
 
 /* Category slide */
 
-.category {
-    border: 2px solid #003b21;
+#categories-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
 }
 
-.category *:hover {
+#category-box {
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+#category-box *:hover {
     cursor: pointer;
     background-color: #003b21;
     color: #fff;
+}
+
+.category {
+    flex: 1;
+    min-width: 125px;
+    border-bottom: 2px solid #003b21;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 .category-title {
@@ -306,6 +337,14 @@ footer i:hover {
 
     #hero-btn a {
         font-size: 1.25rem;
+    }
+
+    #top-img {
+        height: 20vh;
+    }
+
+    #categories-container {
+        padding: 0;
     }
 }
 
