@@ -4,16 +4,17 @@
 <!-- Categories -->
 <div class="container">
     <div class="row">
-        <div class="col-12 mt-5">
-            <div class="row mb-3 text-center">
+        <div class="col-12 mt-3">
+            <div class="row text-center">
                 <h1 class="category-title">{{ selected_category.category_name }}</h1>
-                <div class="row row-cols-1  row-cols-lg-3 g-4 m-2">
-                    {% for post in posts %}
-                    <!-- Cards from selected category -->
-                    {% include 'card.html' %}
-                    {% endfor %}
-                </div>
             </div>
+            <div class="row row-cols-1 mb-3 row-cols-lg-3 g-4 m-2">
+                {% for post in posts %}
+                <!-- Cards from selected category -->
+                {% include 'card.html' %}
+                {% endfor %}
+            </div>
+
         </div>
     </div>
 </div>
