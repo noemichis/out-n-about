@@ -2,9 +2,37 @@
 {% load static %}
 {% block content %}
 
+{% block categories %}
+{% endblock categories %}
+
+<!-- Hero Section -->
+{% block hero %}
+<section id="hero">
+    <!-- Logo title overlay -->
+    <div class="d-flex justify-content-center card-img-overlay">
+        <div class="row p-2" id="hero-title">
+            <img src="{% static 'images/logo.png' %}" alt="">
+            <hr class="mx-auto">
+            <h5 class="text-center">Experience the best of the West</h5>
+        </div>
+        <div class="row" id="hero-btn">
+            <a href="#index-content" class="btn btn-lg btn-success px-5">VISIT&raquo;</a>
+        </div>
+    </div>
+    {% if not user.is_authenticated %}
+    <div class="container-fluid p-2 text-end" id="hero-login">
+        <span>To comment and like, please<a href="{% url 'account_login' %}" class="">
+                Login&raquo;
+            </a> Not a
+            user yet? <a href="{% url 'account_signup' %}" class=""> Register&raquo; </a></span>
+    </div>
+    {% endif %}
+</section>
+{% endblock hero %}
+
 <!-- Content -->
-<div class="container mb-3">
-    <div class="row row-cols-1  row-cols-lg-3 g-4 m-2">
+<div class="container mb-3" id="index-content">
+    <div class="row row-cols-1 row-cols-lg-3 g-4 m-2">
         {% for post in post_list %}
         <!-- Cards section -->
         {% include 'card.html' %}
