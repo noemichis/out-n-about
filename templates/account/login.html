@@ -8,10 +8,11 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container post-container mx-auto px-3">
   <div class="row">
-    <div class="col-12 mt-3 offset-md2">
+    <div class="col-12 col-md-10 mt-5">
       <h1>{% trans "Sign In" %}</h1>
+      <hr>
 
       <!-- {% get_providers as socialaccount_providers %}
 
@@ -36,12 +37,12 @@
       <p>{% blocktrans %} Welcome back to Out-N-About Sligo!
         To post, comment and like, please log in.
         Don't have an account? You can
-        <a href="{{ signup_url }}">sign up</a> here first.{% endblocktrans %}</p>
+        <a href="{{ signup_url }}">sign up here</a> first.{% endblocktrans %}</p>
       <!-- {% endif %} -->
     </div>
   </div>
   <div class="row">
-    <div class="col-12 mt-3 offset-md2">
+    <div class="col-10 col-sm-8 col-md-6 mt-3">
 
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
@@ -49,7 +50,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-lg btn-success px-3 mt-3" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>
