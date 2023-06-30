@@ -29,10 +29,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" aria-current="page">
-                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link{% if request.path == '/' %} active{% endif %}" aria-current="page"
+                                href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
+                            <a class="nav-link{% if request.path == '/about' %} active{% endif %}" aria-current="page"
+                                href="{% url 'about' %}">About</a>
                         </li>
                         <li class="nav-item  dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -93,7 +95,8 @@
         <div class="container mt-1" id="categories-container">
             <div class="d-flex" id="category-box">
                 {% for category in categories_list %}
-                <div class="category p-2 mt-2">
+                <div
+                    class="category p-2 mt-2 {% if category.category_name == selected_category.category_name %} active{% endif %}">
                     <a href="{% url 'categories' category.category_name %}">
                         <div class="text-center">
                             <h4 class="category-name">{{ category.category_name }}</h4>
