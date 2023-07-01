@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
+
 
 {% block topimage %}
 {% endblock topimage %}
-
-{% block categories %}
-{% endblock categories %}
 
 <!-- Hero Section -->
 {% block hero %}
@@ -33,6 +30,8 @@
 </section>
 {% endblock hero %}
 
+{% block content %}
+
 <!-- Content -->
 <div class="container mb-3" id="index-content">
     <div class="row row-cols-1 row-cols-lg-3 g-4 m-2">
@@ -42,4 +41,5 @@
         {% endfor %}
     </div>
 </div>
+
 {% endblock content %}
