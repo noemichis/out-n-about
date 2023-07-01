@@ -75,6 +75,26 @@ hr {
         1px 1px 50px inset rgba(0, 0, 0, 0.64);
 }
 
+/* Alert message */
+
+#alert-container {
+    position: fixed;
+    width: 100%;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3030;
+}
+
+.alert {
+    margin: 0;
+    /* font-family: 'Abel', sans-serif; */
+    color: white;
+    background: rgb(0, 59, 33);
+}
+
+
 /* Navbar */
 
 .navbar {
