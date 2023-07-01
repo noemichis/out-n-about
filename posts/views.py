@@ -10,16 +10,25 @@ from .models import *
 from .forms import CommentForm
 
 
-def index(request):
+class Index(generic.ListView):
     """
     Renders the index page
     """
-    get_posts = Post.objects.all()
-    context = {
-        'post_list': get_posts
-    }
+    model = Post
+    queryset = Post.objects.all()
+    template_name = 'index.html'
+    # context = {
+    #     'post_list': get_posts
+    # }
 
-    return render(request, 'index.html', context)
+    # return render(request, 'index.html', context)
+
+
+def about(request):
+    """
+    Renders the about page
+    """
+    return render(request, 'about.html')
 
 
 def categories_view(request, category_name):
@@ -47,9 +56,14 @@ class PostDetail(View, SuccessMessageMixin):
         get_posts = Post.objects.all()
         post = get_object_or_404(get_posts, slug=slug)
         comments = post.comments.filter(approved=True)
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
         context = {
             'post': post,
             'comments': comments,
+            'liked': liked,
             'comment_form': CommentForm(),
         }
 
@@ -63,10 +77,14 @@ class PostDetail(View, SuccessMessageMixin):
         post = get_object_or_404(get_posts, slug=slug)
         comments = post.comments.filter(approved=True)
         comment_form = CommentForm(data=request.POST)
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         context = {
             'post': post,
             'comments': comments,
+            'liked': liked,
             'comment_form': comment_form,
         }
 
@@ -104,3 +122,20 @@ class CommentEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'comment_edit.html'
     form_class = CommentForm
     success_message = "Comment successfully updated"
+
+
+class PostLike(LoginRequiredMixin, SuccessMessageMixin, View):
+    """
+    Allows users to like and unlike posts
+    """
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            success_message = "Post unliked"
+
+        else:
+            post.likes.add(request.user)
+            success_message = "Post successfully liked"
+
+        return redirect('post_detail', slug=post.slug)
