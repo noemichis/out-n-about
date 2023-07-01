@@ -20,7 +20,7 @@
             <span>{{ post.date_posted | date:"SHORT_DATETIME_FORMAT" }} | </span>
             <span>{{ post.comments.count }} <i class="fa-regular fa-comment fa-xs"></i> |
             </span>
-            <span><i class="fa-regular fa-thumbs-up"></i></span>
+            <span>{{ post.likes_number }}<i class="fa-regular fa-thumbs-up"></i></span>
         </div>
     </div>
 </div>
