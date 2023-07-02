@@ -304,10 +304,6 @@ textarea.form-control {
     box-shadow: 1px 0 5px #003b21;
 }
 
-label.requiredField {
-    display: none !important;
-}
-
 /* Override accounts form input */
 
 input {

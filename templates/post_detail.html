@@ -32,13 +32,15 @@
                     <form action="{% url 'post_like' post.slug %}" class="d-inline" method="post">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="post_id" value="{{ post.slug }}" class="btn-like"><i
-                                class="fa-solid fa-thumbs-up fa-lg"></i></button>
+                        <button type="submit" name="post_id" value="{{ post.slug }}" class="btn-like"
+                            aria-label="unlike"><i class="fa-solid fa-thumbs-up fa-lg"></i></button>
                         {% else %}
-                        <button type="submit" name="post_id" value="{{ post.slug }}" class="btn-like"><i
-                                class="fa-regular fa-thumbs-up fa-lg"></i></button>
+                        <button type="submit" name="post_id" value="{{ post.slug }}" class="btn-like"
+                            aria-label="like"><i class="fa-regular fa-thumbs-up fa-lg"></i></button>
                         {% endif %}
                     </form>
+                    {% else %}
+                    <i class="fa-regular fa-thumbs-up fa-lg"></i>
                     {% endif %}
                 </span>
                 <span> | {{ post.comments.count }} <i class="fa-regular fa-comment fa-lg"></i> |
@@ -111,11 +113,6 @@
         {% if user.is_authenticated %}
         <div class="col-12 col-md-10">
             <div>
-                {% if comments.count != 0 %}
-                <h5><strong>Leave a comment:</strong></h5>
-                {% else %}
-                <h5><strong>Be the first to leave a comment:</strong></h5>
-                {% endif %}
                 <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
