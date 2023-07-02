@@ -67,3 +67,16 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.related_post.slug])
+
+
+class Contact(models.Model):
+    """
+    Model for Contacting
+    """
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    contacted_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

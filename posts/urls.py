@@ -17,4 +17,5 @@ urlpatterns = [
          name='comment_edit'),
     path('about', views.about, name='about'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('contact', views.Contact.as_view(), name='contact'),
 ]

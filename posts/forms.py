@@ -2,7 +2,7 @@
 Forms
 """
 
-from .models import Comment
+from .models import Comment, Contact
 from django import forms
 
 
@@ -14,3 +14,13 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body', )
         labels = {'body': 'Leave a comment'}
+
+
+class ContactForm(forms.ModelForm):
+    """
+    Form for the Contact Us page
+    """
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message']
+

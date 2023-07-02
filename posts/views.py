@@ -6,12 +6,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import CommentForm
+from .forms import *
 
 
 class Index(generic.ListView):
@@ -140,3 +141,17 @@ class PostLike(LoginRequiredMixin, View):
             messages.success(request, 'Post successfully liked')
 
         return redirect('post_detail', slug=post.slug)
+
+
+class Contact(SuccessMessageMixin, generic.FormView):
+    """
+    Creates the contact page view
+    """
+    template_name = 'contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('home')
+    success_message = 'Your message was successfully sent'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
