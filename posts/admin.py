@@ -3,7 +3,7 @@ Admin registration
 """
 
 from django.contrib import admin
-from .models import Post, Categories, Comment
+from .models import Post, Categories, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -40,3 +40,11 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comment(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    """
+    Adds the messages sent by users to the admin panel
+    """
+    list_display = ('name', 'email', 'message', 'contacted_on')
