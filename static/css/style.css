@@ -43,7 +43,7 @@ hr {
 }
 
 .bg-position {
-    background-image: url(https://res.cloudinary.com/dn2p3swhy/image/upload/v1688085448/hero_mqv9xg.jpg);
+    background-image: url('https://res.cloudinary.com/dn2p3swhy/image/upload/v1688302393/hero_o7zmsr.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -131,7 +131,8 @@ hr {
 }
 
 #logo {
-    max-width: 200px;
+    width: 200px;
+    height: auto;
 }
 
 .dropdown-menu {
@@ -179,6 +180,8 @@ hr {
 
 #hero img {
     padding: 0.5rem;
+    width: 100%;
+    height: auto;
 }
 
 #hero-login {
@@ -346,6 +349,10 @@ footer i:hover {
 @media only screen and (max-width: 768px) {
     h5 {
         font-size: 1rem;
+    }
+
+    .bg-position {
+        background-image: url('https://res.cloudinary.com/dn2p3swhy/image/upload/v1688302759/hero-small_wxalhl.jpg');
     }
 
     #hero {

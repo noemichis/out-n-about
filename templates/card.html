@@ -4,16 +4,17 @@
 <div class="col">
     <div class="card h-100">
         {% if 'placeholder' in post.post_image.url %}
-        <img src="{% static 'images/test.jpg' %}" class="card-img-top p-2">
+        <img src="{% static 'images/placeholder-small.webp' %}" class="card-img-top p-2"
+            alt="Placeholder image for {{ post.title }}">
         {% else %}
-        <img src="{{ post.post_image.url }}" class="card-img-top p-2">
+        <img src="{{ post.post_image.url }}" class="card-img-top p-2" alt="{{ post.title }}">
         {% endif %}
         <div class="card-body">
             <a href="{% url 'post_detail' post.slug %}">
                 <h2 class="card-title">{{ post.title }}</h2>
             </a>
             <div class="card-text mt-3">
-                <h6>{{ post.post_summary | slice:":100" }}</h6>
+                <p>{{ post.post_summary | slice:":100" }}</p>
             </div>
         </div>
         <div class="card-footer p-3">
