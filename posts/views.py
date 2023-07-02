@@ -16,11 +16,13 @@ from .forms import CommentForm
 
 class Index(generic.ListView):
     """
-    Renders the index page
+    Renders the index page/
+    Orders posts by likes
     """
     model = Post
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('likes')
     template_name = 'index.html'
+    paginate_by = 9
 
 
 def about(request):
