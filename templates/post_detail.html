@@ -17,7 +17,8 @@
             <div class="my-3 d-flex justify-content-center">
                 <div class="image-container">
                     {% if 'placeholder' in post.post_image.url %}
-                    <img src="{% static 'images/test.jpg' %}" alt="Placeholder for{{ post.title }}" class="img-fluid">
+                    <img src="{% static 'images/placeholder.webp' %}" alt="Placeholder for {{ post.title }}"
+                        class="img-fluid">
                     {% else %}
                     <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img-fluid">
                     {% endif %}
