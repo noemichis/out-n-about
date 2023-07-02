@@ -149,6 +149,12 @@ hr {
     font-weight: bold;
 }
 
+/* Contact Form */
+
+#contact-form p {
+    margin-bottom: 0;
+}
+
 /* Hero section */
 
 #hero {
@@ -312,9 +318,10 @@ textarea.form-control {
     box-shadow: 1px 0 5px #003b21;
 }
 
-/* Override accounts form input */
+/* Override basic form styles */
 
-input {
+input,
+textarea {
     width: 100%;
     padding: 2.5px;
     border: 1px solid #003b21;
@@ -322,6 +329,10 @@ input {
 
 input#id_remember {
     width: auto;
+}
+
+label {
+    padding: 3px 0;
 }
 
 /* Footer */
