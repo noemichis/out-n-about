@@ -1,3 +1,7 @@
+"""
+Views for Posts and comments
+"""
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView
@@ -17,11 +21,6 @@ class Index(generic.ListView):
     model = Post
     queryset = Post.objects.all()
     template_name = 'index.html'
-    # context = {
-    #     'post_list': get_posts
-    # }
-
-    # return render(request, 'index.html', context)
 
 
 def about(request):
@@ -124,7 +123,7 @@ class CommentEdit(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = "Comment successfully updated"
 
 
-class PostLike(LoginRequiredMixin, SuccessMessageMixin, View):
+class PostLike(LoginRequiredMixin, View):
     """
     Allows users to like and unlike posts
     """
@@ -132,10 +131,10 @@ class PostLike(LoginRequiredMixin, SuccessMessageMixin, View):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-            success_message = "Post unliked"
+            messages.success(request, 'Post unliked')
 
         else:
             post.likes.add(request.user)
-            success_message = "Post successfully liked"
+            messages.success(request, 'Post successfully liked')
 
         return redirect('post_detail', slug=post.slug)

@@ -1,9 +1,10 @@
-from . import views
-from django.urls import path
-
 """
 Posts URL paths
 """
+
+from . import views
+from django.urls import path
+
 urlpatterns = [
     path('', views.Index.as_view(), name='home'),
     path('categories/<str:category_name>', views.categories_view,
