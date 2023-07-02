@@ -6,7 +6,7 @@ $(function () {
 });
 
 // Add and remove active class from links
-$(function () {
+$(document).ready(function () {
     $('.category').click(function () {
         $('.category').removeClass('active');
         $(this).addClass('active');

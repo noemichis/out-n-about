@@ -7,14 +7,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Out-N-About Sligo, a page for sharing experiences in the West of Ireland.">
+    <meta name="keywords"
+        content="Sligo, Ireland, Wild Atlantic Way, West of Ireland, blog, things to do, outdoors, food, events, culture, art">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/icon.jpg' %}">
     <title>Out-n-About</title>
 </head>
 
 <body>
     <header>
+        <!-- Navigation links -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a href="{% url 'home' %}" class="navbar-brand">
@@ -25,7 +30,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <!-- Collapsible navbar -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" aria-current="page">
@@ -86,14 +91,17 @@
             </div>
         </div>
 
+        <!-- Top image block -->
         {% block topimage %}
         <div class="bg-position" id="top-img">
         </div>
         {% endblock topimage %}
 
+        <!-- Hero image goes here on Index page -->
         {% block hero %}
         {% endblock hero %}
 
+        <!-- Categories slide -->
         {% block categories %}
         <div class="container mt-1" id="categories-container">
             <div class="d-flex" id="category-box">
@@ -120,10 +128,14 @@
         </div>
         {% endblock categories %}
     </header>
+    <!-- Main content -->
     <main>
         {% block content %}
+        <!-- Extended content goes here -->
         {% endblock content %}
     </main>
+
+    <!-- Footer -->
     <footer class="footer mt-auto py-3">
         <div class="container-fluid text-center">
             <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Go to my Facebook"><i
@@ -136,6 +148,7 @@
         <p class="text-center mb-0">Copyright &copy;Noemi Chis-Hunyadi 2023</p>
     </footer>
 
+    <!-- Scripts used -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
