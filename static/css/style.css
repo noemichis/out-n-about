@@ -149,6 +149,11 @@ hr {
     font-weight: bold;
 }
 
+#no-link {
+    align-items: center;
+    color: #fff !important;
+}
+
 /* Contact Form */
 
 #contact-form p {
@@ -301,6 +306,11 @@ hr {
 
 .card hr {
     margin: 0;
+}
+
+/* About Page */
+#about-pg p {
+    text-align: justify;
 }
 
 /* Override Bootstrap classes */
