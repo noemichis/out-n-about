@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Remove top image block -->
+{% block topimage %}
+{% endblock topimage %}
+
+<!-- Hero Section -->
+{% block hero %}
+<section class="bg-position" id="hero">
+    <!-- Logo title overlay -->
+    <div class="d-flex justify-content-center card-img-overlay">
+        <div class="row p-2" id="hero-title">
+            <img src="{% static 'images/logo.webp' %}" alt="Out-N-About page logo">
+            <hr class="mx-auto">
+            <h5 class="text-center">Experience the best of the West</h5>
+        </div>
+        <div class="row" id="hero-btn">
+            <a href="#index-content" class="btn btn-lg btn-success px-5">VISIT&raquo;</a>
+        </div>
+    </div>
+    <!-- Link to Login or Sign Up page -->
+    {% if not user.is_authenticated %}
+    <div class="container-fluid p-2 text-end" id="hero-login">
+        <span>To comment and like, please<a href="{% url 'account_login' %}" class="">
+                Login&raquo;
+            </a> Not a
+            user yet? <a href="{% url 'account_signup' %}" class=""> Sign Up&raquo; </a></span>
+    </div>
+    {% endif %}
+</section>
+{% endblock hero %}
+
+<!-- Home page content -->
+{% block content %}
+<div class="container mb-3" id="index-content">
+    <div class="row row-cols-1 row-cols-lg-3 g-4 m-2">
+        {% for post in post_list %}
+        <!-- Cards section -->
+        {% include 'card.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

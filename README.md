@@ -1,108 +1,259 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# OUT-N-ABOUT
 
-Welcome noemichis,
+[amiresponsive](https://ui.dev/amiresponsive) image
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[live link]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Out-N-About Sligo is a travel, but also local blog, with highlight places and events of the beautiful county Sligo in the West of Ireland. Users can view blogs related to different activities, also leave comments and like posts if they are authenticated. Users can also get in touch and their message will be registered in the Database, then visible on the admin panel.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## CONTENTS
+- [User Experience](#user-experience)
+    - [User Stories](#user-stories)
 
-`python3 -m http.server`
+- [Design](#design)
+    - [Colors](#colors)
+    - [Typography](#typograpy)
+    - [Wireframes](#wireframes)
+    - [Database Design](#database-design)
 
-A blue button should appear to click: _Make Public_,
+- [Agile](#agile)
 
-Another blue button should appear to click: _Open Browser_.
+- [Features](#features)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [Technologies](#technologies)
+    - [Languages](#languages)
+    - [Django packages](#django-packages)
+    - [Frameworks - Libraries - Programs](#frameworks---libraries---proograms)
 
-A blue button should appear to click: _Make Public_,
+- [Testing](#testing)
 
-Another blue button should appear to click: _Open Browser_.
+- [Deployment](#deployment)
+    - [Create Django Project](#create-django-project)
+    - [Deploy to Heroku](#deploy-to-heroku)
+    - [How to Fork](#how-to-fork)
+    - [How to Clone](#how-to-clone)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Credits](#credits)
+    - [Code](#code)
+    - [Content](#content)
 
-To log into the Heroku toolbelt CLI:
+- [Acknowledgements]
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## USER EXPERIENCE
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### USER STORIES
 
-------
+|ID|User Stories|
+|--|:---|
+|[1](https://github.com/noemichis/out-n-about/issues/28)|As a **user** I can **create an account** so that **I can comment and like**
+|[2](https://github.com/noemichis/out-n-about/issues/23)|As a **registered user** I can **login** so that **I can interact with the site**|
+|[3](https://github.com/noemichis/out-n-about/issues/11)|As a **user** I can **select different categories** so that **the content is better sorted**|Posts are organized in categories/ Each category can be selected|Pass|
+|[4](https://github.com/noemichis/out-n-about/issues/19)|As a **user** I can **view a list of posts** so that **I can select one to read**|
+|[5](https://github.com/noemichis/out-n-about/issues/25)|As a **user** I can **see the post description** so that **I know what it will be about**|
+|[6](https://github.com/noemichis/out-n-about/issues/18)|As a **user** I can **open a post** so that **I can view it's contents**|
+|[7](https://github.com/noemichis/out-n-about/issues/22)|As a **user** I can **view the comments** so that **I can see others opinion**|
+|[8](https://github.com/noemichis/out-n-about/issues/26)|As a **user** I can **intuitively navigate the page** so that **I have the full experience**|
+|[9](https://github.com/noemichis/out-n-about/issues/17)|As a **user** I can **view the number of likes** so that **I know how popular a post is**|
+|[10](https://github.com/noemichis/out-n-about/issues/16)|As a **user** I can **easily find the contact information o the site** so that **I can ask any questions**|
 
-## Release History
+|ID|Authenticated User Stories|
+|--|:---|
+|[1](https://github.com/noemichis/out-n-about/issues/27)|As an **authenticated user** I can **easily find the log out button** so that **I can log out at anytime**|
+|[2](https://github.com/noemichis/out-n-about/issues/24)|As an **authenticated user** I can **comment on a post** so that **I get engaged in the conversation**|
+|[3](https://github.com/noemichis/out-n-about/issues/14)|As an **authenticated user** I can **update my comments** so that **I can edit it again**|
+|[4](https://github.com/noemichis/out-n-about/issues/21)|As an **authenticated user** I can **delete my comments** so that **it's not visible to others**|
+|[5](https://github.com/noemichis/out-n-about/issues/16)|As an **authenticated user** I can **like/unlike a post** so that **I can interact with the content**|
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+|ID|Admin User Stories|
+|--|:---|
+|[1](https://github.com/noemichis/out-n-about/issues/7)|As an **admin user** I can **set up an admin user** so that **I have access to the admin site**|
+|[2](https://github.com/noemichis/out-n-about/issues/13)|As an **admin user** I can **create, update and delete posts** so that **I can manage the content**|
+|[3](https://github.com/noemichis/out-n-about/issues/12)|As an **admin user** I can **edit and delete comments** so that **I can moderate the content**|
+|[4](https://github.com/noemichis/out-n-about/issues/31)|As an **admin user** I can **view the messages sent through the contact form** so that **I can reply to them**|
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## DESIGN
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### COLORS
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The main color scheme is simple, all page elements being based on a green color and white background. This is mainly to limit distractions, but also the green represent the true color of Ireland. The images over the blog will have all different shades of green and this will complement the dark green/white combo.
+![Color palette](assets/readme/colors.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### TYPOGRAPY
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### WIREFRAMES
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<details><summary>Wireframes created with the help of Figma</summary>
+<img src="assets/readme/landing.png">
+<img src="assets/readme/categories.png">
+<img src="assets/readme/post.png">
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Even though the final design is slightly different to the wireframes as they were created before starting the porject, it has been very helpful to have them along the development process. 
+</details>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### DATABASE DESIGN
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<details><summary>ERD created with the help of Lucidchart</summary>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Proposed diagram
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<img src="assets/readme/proposed-diagram.png">
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Final diagram
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<img src="assets/readme/final-diagram.png">
 
-------
+- Due to unforseen events the time to work on the project has been reduced hance the database diagram is updated to the current achievements. Hopefully all models will be implemented in the future.
+</details>
 
-## FAQ about the uptime script
+## AGILE 
 
-**Why have you added this script?**
+- GitHub issues and Github Projects were used to plans and manage the development process. Different attempts have been used as the initial approach didn't feel the easiest way. 
+- All Users stories and some EPICs were converted into issues and split into sprints. Some issues have been moved around over the course of development as the work load involved wasn't realistically considered. 
+- User stories have also been labeled according to the MoSCoW method.
+- As issues were handled they have been moved from the  **Todo this Iteration**, to **In Progress**, to **Done**. If an issue couldn't be approached it was moved back to the **Global Backlog** for reconsideration, then into **Won't Have** if couldn't be implemented.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+Iterations planning
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+|Iteration|Description|Due Date|Complete on|Comments|
+|:--|:--|:--:|:--:|:--
+|Iteration 0|Project preparation and environment set up|14/05/2023|14/05/2023|Didn't know have to close it manually|
+|Iteration 1|Content and navigation|28/05/2023|15/06/2023|Family illness set back with 2.5 weeks|
+|Iteration 2|User Access|01/06/2023|15/06/2023|Not a balanced iteration|
+|Iteration 3|CRUD|11/06/2023|15/06/2023|N\A|
+|Iteration 4|MVP complete and Testing|21/06/2023|03/07/2023|Set back another week due to no broadband|
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+Additional iterations were also planned and will be considered as enhancements and future addition to the project. The board and issues can be found below. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- [GitHub Project board](https://github.com/users/noemichis/projects/6) 
 
-**So….?**
+- [GitHub issues](https://github.com/noemichis/out-n-about/issues)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+## FEATURES
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## TECHNOLOGIES
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### LANGUAGES
 
-**Anything more?**
+- [Django](https://www.python.org/)
+- [Python](https://www.djangoproject.com/)
+- [HTML 5](https://en.wikipedia.org/wiki/HTML/)
+- [CSS 3](https://en.wikipedia.org/wiki/CSS)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### DJANGO PACKAGES
 
----
+- [Gunicorn](https://gunicorn.org/) - server for Heroku
+- [django-allauth](https://django-allauth.readthedocs.io/) - user authentication
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/) - style comment form
+- [psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL db Adapter
+- [django-summernote](https://pypi.org/project/django-summernote/) - WYSIWYG editor for Posting
 
-Happy coding!
+### FRAMEWORKS - LIBRARIES - PROGRAMS
+
+- [GitHub](https://github.com/) - version control and source code
+- [Gitpod](https://gitpod.io) - cloud development environment
+- [Heroku](https://www.heroku.com/) - live deployment of project
+- [Bootstrap5](https://getbootstrap.com/) - easy use predefined styles
+- [Jquery](https://jquery.com/) - use with own script
+- [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL as a service
+- [Figma](https://www.figma.com) - wireframe design
+- [LucidChart](https://lucid.app/) - ERD diagram design
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [Cloudinary](https://cloudinary.com/) - hosting images
+- [Font Awesome](https://fontawesome.com/) - icons
+- [Google Fonts](https://fonts.google.com/) - typography
+- [CANVA](https://www.canva.com/) - help with logo design
+- [W3C Markup validation Service](https://validator.w3.org/) - validate HTML
+- [The W3C CSS Validation Service](https://jigsaw.w3.org/) - validate CSS
+- [JSHint](https://jshint.com/) - validate jQuery
+- [Am I Responsive](https://ui.dev/) - test responsiveness on different devices
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - validate python code
+- [Code Spell Checker](https://open-vsx.org/extension/streetsidesoftware/code-spell-checker) - VS Code extension 
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - VS Code extension
+- [Online-Converter](https://www.online-convert.com/) - concert images in webp
+
+## TESTING
+
+All testing can be found at [TESTING.md](TESTING.md)
+
+## DEPLOYMENT 
+
+### Create Django Project
+
+The template used is the [CI-full-template](https://github.com/Code-Institute-Org/ci-full-template) provided by Code Institute
+
+1. New repository is created from template
+2. New workspace is opened on Gitpod
+3. Install Django `pip3 install 'django<4'`
+4. Install Django dependencies ans libraries
+5. Create requirements.txt with `pip3 freeze --local`
+6. Create Project `django-admin startproject <Project_name>`
+7. Create app `python3 manage.py startapp <App_name></App_name>`
+8. Add Secret Keys to env.py and remove from setting.py
+9. Migrate changes `python3 manage.py migrate`
+10. Create Procfile
+
+### Deploy to Heroku
+
+1. Create Heroku account and log in
+2. Select `New` and click `Create new app`
+3. Choose **name**, **region** and `Create app`
+4. Navigate to `Settings`, into `Config vars` and reveal
+5. Enter all relevant Config Vars
+6. Navigate to `Deploy`  and choose *Github* as `Deployment method`
+7. Once connected to *Github* in `App connected to GitHub` find your repo name
+8. `Enable Automatic Deploys` if you want deploy new version after every push
+9. `Manual Deploys` if you want to control all deployments
+10. `View` link will be provided to navigate to the deployed page
+
+### HOW TO FORK
+
+1. Go to [GitHub](https://github.com/noemichis/out-n-about)
+2. Find the `Fork` button on the top of the page and expand
+3. Select `Create a new Fork`
+
+A forked version of the project will appear in your repository 
+
+### HOW TO CLONE
+
+1. OpeGo to [GitHub](https://github.com/noemichis/out-n-about)
+2. Find the `<>Code` dropdown and expand
+3. You can select from HTTPS, SSH or GitHub CLI
+4. Once selected and copied the project will appear in you repository
+5. Open an IDE
+6. Enter `git clone` followed by the URL
+7. Clone created
+
+## CREDITS
+
+### CODE
+
+- [Django Documentation](https://www.djangoproject.com/) - most code was written with the help of the Django docs with serious help in troubleshooting
+
+    - context_processors
+    - Forms - especially with ContactForm and rendering it
+    - Views/Mixins
+    - The message framework
+- [Djangocentral](https://djangocentral.com/)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/) 
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/#)
+- [Stack Overflow](https://stackoverflow.com/) - familiarize with different ways of writing code, learn to be more analytical
+- [jQuery](https://jquery.com/) - own scripts were written with help of jQuery documentation
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Focus on learning Bootstrap from documentation. 
+- Horizontal scroll inspiration from [webflow](https://discourse.webflow.com/t/horizontal-scroll-on-mobile-menu/87055)
+- Inspiration for Navbar active [TEK SHINOBI](https://tekshinobi.com/setting-active-navbar-link-in-django-template/)
+
+### CONTENT
+
+- The inspiration for the website is taken from [DiscoverIreland](https://www.discoverireland.ie/) and [Tripadvisor](https://www.tripadvisor.ie/)
+
+- [iStock](https://www.istockphoto.com/) was used in obtaining the static images for the page
+
+## ACKNOWLEDGEMENTS
+
+- To my partner for being very supportive through some difficult times, who also offered tremendous motivation all along and before the deadline.
+- Code institute community for all the support and 
+encouragement and the available support. 

@@ -1,0 +1,411 @@
+/* Import Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap');
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    color: #003b21;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2 {
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: calc(2rem + 1.5vw);
+}
+
+a {
+    text-decoration: none;
+    color: #003b21;
+}
+
+hr {
+    color: #003b21;
+}
+
+.bg-position {
+    background-image: url('https://res.cloudinary.com/dn2p3swhy/image/upload/v1688302393/hero_o7zmsr.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 5px 6px 20px rgba(0, 59, 33, 0.78),
+        3px 6px 30px inset rgba(0, 59, 33, 0.82),
+        1px 1px 50px inset rgba(0, 0, 0, 0.64);
+}
+
+/* Buttons */
+
+.btn {
+    margin: 2px 0 5px 0;
+    color: #fff;
+    border: none;
+}
+
+.btn-success {
+    background-color: #003b21;
+}
+
+
+.btn-success:hover {
+    background-color: #007e47;
+    box-shadow: 1px 2px 10px #003b21;
+}
+
+.btn-danger:hover {
+    background-color: #f10000;
+    box-shadow: 1px 2px 10px #7e0101;
+}
+
+.btn-like {
+    border: none;
+    background: none;
+    color: #003b21;
+}
+
+.btn-like::after {
+    background: #003b21;
+    color: #fff;
+}
+
+/* Alert message */
+
+#alert-container {
+    position: fixed;
+    width: 100%;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3030;
+}
+
+.alert {
+    margin: 0;
+    color: white;
+    background: rgb(0, 59, 33);
+}
+
+
+/* Navbar */
+
+.navbar {
+    padding: 10px 10px 5px 10px;
+    background-color: #003b21;
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: #ffffffcb !important;
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.active {
+    color: #ffffffcb !important;
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+#logo {
+    width: 200px;
+    height: auto;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+}
+
+.dropdown-item {
+    color: #003b21;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Contact Form */
+
+#contact-form p {
+    margin-bottom: 0;
+}
+
+/* Hero section */
+
+#hero {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
+#hero hr {
+    color: #fff;
+    width: 80%;
+}
+
+.card-img-overlay {
+    height: fit-content;
+    width: 70vw;
+    justify-content: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+}
+
+#hero-title,
+#hero-login {
+    color: white;
+    background: rgba(0, 59, 33, 0.85);
+    box-shadow: 5px 6px 20px rgba(0, 59, 33, 0.78),
+        3px 6px 30px inset rgba(0, 59, 33, 0.82),
+        1px 1px 50px inset rgba(0, 0, 0, 0.64),
+        4px 4px 7px rgba(0, 0, 0, 0.64);
+}
+
+#hero img {
+    padding: 0.5rem;
+    width: 100%;
+    height: auto;
+}
+
+#hero-login {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#hero-login:hover {
+    background-color: #007e47b9;
+}
+
+#hero-login a {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+#hero-login a:hover {
+    font-weight: bold;
+    color: #ffd900;
+    letter-spacing: 1.1px;
+}
+
+#hero-btn {
+    position: absolute;
+    top: 100%;
+}
+
+#hero-btn a {
+    font-family: 'Architects Daughter', cursive;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    border: 2px solid #ffffffcb;
+}
+
+/* Top image across all pages */
+
+#top-img {
+    width: 100%;
+    height: 30vh;
+}
+
+
+/* Category slide */
+
+#categories-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+#category-box {
+    align-items: center;
+    width: 100%;
+}
+
+#category-box *:hover {
+    cursor: pointer;
+    background-color: #003b21;
+    color: #fff;
+}
+
+.category {
+    flex: 1;
+    min-width: 125px;
+    border-bottom: 2px solid #003b21;
+}
+
+.category.active,
+.category.active * {
+    background-color: #003b21;
+    color: #fff;
+    text-decoration: none;
+}
+
+.category-title {
+    font-size: calc(2rem + 1.5vw);
+}
+
+/* Custom CSS for the cards */
+
+.card {
+    cursor: pointer;
+    border: 1px solid #003b21;
+    box-shadow: 1px 2px 10px #003b21;
+}
+
+.card:hover {
+    transform: translateY(-.15em) scale(1.01);
+    box-shadow: 3px 5px 20px #003b21;
+}
+
+.card-title:hover {
+    color: #002213;
+}
+
+.card-footer {
+    background-color: #003b21;
+    color: #fff;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.card hr {
+    margin: 0;
+}
+
+/* Override Bootstrap classes */
+
+.img-fluid {
+    max-height: 30vh;
+}
+
+/* Override crispy form control with custom CSS */
+
+textarea.form-control {
+    max-height: 100px;
+}
+
+.form-control {
+    border-color: #003b21;
+}
+
+.form-control:focus {
+    border-color: #003b21;
+    box-shadow: 1px 0 5px #003b21;
+}
+
+/* Override basic form styles */
+
+input,
+textarea {
+    width: 100%;
+    padding: 2.5px;
+    border: 1px solid #003b21;
+}
+
+input#id_remember {
+    width: auto;
+}
+
+label {
+    padding: 3px 0;
+}
+
+/* Footer */
+
+footer {
+    background-color: #003b21;
+    color: #fff;
+}
+
+footer i {
+    color: #fff;
+}
+
+footer i:hover {
+    cursor: pointer;
+    color: #ffffffcb;
+    transform: scale(1.2);
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 992px) {
+    #hero {
+        width: 100%;
+        height: 80vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h5 {
+        font-size: 1rem;
+    }
+
+    .bg-position {
+        background-image: url('https://res.cloudinary.com/dn2p3swhy/image/upload/v1688309126/hero-small_smo33m.webp');
+    }
+
+    #hero {
+        width: 100%;
+        height: 50vh;
+    }
+
+    #hero-btn a {
+        font-size: 1.25rem;
+    }
+
+    #top-img {
+        height: 20vh;
+    }
+
+    #categories-container {
+        padding: 0;
+    }
+
+    #category-box {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .post-container {
+        max-width: 820px;
+    }
+
+    .card-img-overlay {
+        width: fit-content;
+    }
+}
