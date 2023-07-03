@@ -21,9 +21,9 @@ class Index(generic.ListView):
     Orders posts by likes
     """
     model = Post
-    queryset = Post.objects.all().order_by('likes')
+    queryset = Post.objects.all()
     template_name = 'index.html'
-    paginate_by = 9
+    paginate_by = 6
 
 
 def about(request):
