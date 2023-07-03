@@ -46,8 +46,8 @@
                 <span> | {{ post.comments.count }} <i class="fa-regular fa-comment fa-lg"></i> |
                 </span>
             </div>
-            <div class="mt-2 px-1">
-                <p class="content">{{ post.content | safe }}</p>
+            <div class="mt-2 px-1 content">
+                {{ post.content | safe }}
             </div>
         </div>
     </div>

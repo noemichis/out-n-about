@@ -15,10 +15,10 @@
             </a>
             <hr>
             <div class="card-text mt-2">
-                <p>{{ post.post_summary | slice:":100" }}...</p>
+                <p>{{ post.post_summary | slice:":70" }}...</p>
             </div>
         </div>
-        <div class="card-footer p-3">
+        <div class="card-footer p-2">
             <span>{{ post.author }} | </span>
             <span>{{ post.date_posted | date:"SHORT_DATETIME_FORMAT" }} | </span>
             <span>{{ post.comments.count }} <i class="fa-regular fa-comment fa-xs"></i> |
