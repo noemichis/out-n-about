@@ -1,8 +1,8 @@
 # OUT-N-ABOUT
 
-[amiresponsive](https://ui.dev/amiresponsive) image
+![HeroPage](assets/readme/features/Main-image.png)
 
-[live link]()
+[Website Live link](https://out-n-about.herokuapp.com/)
 
 Out-N-About Sligo is a travel, but also local blog, with highlight places and events of the beautiful county Sligo in the West of Ireland. Users can view blogs related to different activities, also leave comments and like posts if they are authenticated. Users can also get in touch and their message will be registered in the Database, then visible on the admin panel.
 

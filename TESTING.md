@@ -12,7 +12,7 @@ Back to [README.md](README.md)
 
 - [Bugs](#bugs)
 
-## TESTING
+# TESTING
 
 Testing took place at all stages of development. All code written was tested straight away where possible to ensure all around site-functionality. In the event of bugs and issues, depending on the importance of the feature troubleshooting tok place straight away.
 
@@ -21,7 +21,7 @@ Most issues encountered have been handled with help of documentation from Django
 All features and user stories have been manually tested multiple times before closing the issue.
 
 
-### FEATURE TESTING
+## FEATURE TESTING
 
 |Page|Feature|Test Scenario|Test Case|Result|
 |:---|:---:|:---:|:---:|:---:|
@@ -73,7 +73,7 @@ All features and user stories have been manually tested multiple times before cl
 |Contact Us page|Submit message to database|Message sent on submit|Click Submit button|Pass|
 |Footer|Social links|Go to social page|Facebook/ Instagram/ Twitter|Pass|
 
-### USER STORY TESTING
+## USER STORY TESTING
 
 |ID|User Story|Acceptance criteria|Test Case|
 |--|:---|:---|:---|
@@ -127,12 +127,13 @@ All features and user stories have been manually tested multiple times before cl
 <details><summary>Sign Up</summary>
 <img src="assets/testing/signup-access.png"></details>
 
-### Code validation
+## Code validation
 
-#### CI Python Linter
+### [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 
-**Out-N-About - outnabout** 
+**Out-N-About - outnabout** <br>
+
 <details><summary>settings.py</summary>
 <img src="assets/testing/setting-py.png">
 Line too long errors are found in settings.py as a result of using the base template
@@ -151,7 +152,7 @@ Line too long errors are found in settings.py as a result of using the base temp
 <img src="assets/testing/manage-py.png">
 </details>
 
-**Out-N-About - posts**
+**Out-N-About - posts**<br>
 
 <details><summary>admin.py</summary>
 <img src="assets/testing/admin-py.png">
@@ -175,19 +176,18 @@ Line too long errors are found in settings.py as a result of using the base temp
 <img src="assets/testing/views-py.png">
 </details>
 
-#### HTML
+### HTML
 Tested with [W3C Markup validation Service](https://validator.w3.org/)
 
 <details><summary>Home</summary><img src="assets/testing/home-html.png"></details>
 <details><summary>Categories</summary><img src="assets/testing/categories-html.png"></details>
 <details><summary>Contact</summary><img src="assets/testing/contact-html.png"></details>
 <details><summary>Sign Out</summary><img src="assets/testing/signout-html.png"></details>
-<details><summary>Sign In</summary><img src="assets/testing/signin-html.png"></details>
+<details><summary>Sign Up</summary><img src="assets/testing/signup-html.png"></details>
 <details><summary>Login</summary><img src="assets/testing/login-html.png"></details>
-<details><summary>Post detail</summary><img src=""></details>
-<details><summary>About</summary><img src=""></details>
 
-#### CSS
+
+### CSS
 Tested with [The W3C CSS Validation Service](https://jigsaw.w3.org/)
 <details><summary>style.css</summary><img src="assets/testing/style-css-valid.png">
 
@@ -204,7 +204,7 @@ Tested with [JsHint](https://jshint.com/)
 </details>
 
 
-## BUGS
+# BUGS
 
 Throughout the development process multiple issues were encountered. Many due to rookie mistakes, but was a great experience trying to resolve them.
 
