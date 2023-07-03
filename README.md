@@ -134,6 +134,116 @@ Additional iterations were also planned and will be considered as enhancements a
 
 ## FEATURES
 
+### Landing page
+
+![Landing page](assets/readme/features/Home-pg.png)
+
+- Hero image to welcome the User with `Visit button` which redirects the user to the second part of the page.
+- Contains a small banner at the bottom of the image that appears only if the user is not authenticated.
+
+![Main-posts loop](assets/readme/features/main-posts.png)
+
+- The `Visit button` bring the user down to a list of all posts presented in cards. There are 6 posts on this page, which can be selected and opened. 
+
+### Navbar
+
+![Navbar when not authenticated](assets/readme/features/nav-no-login.png)
+
+- The Navbar is present on each page and it changes state if a user is authenticated or not. Once a user signs in, the Login and Sign Up options change in the Users name and Sign Out.
+
+![Navbar when authenticated](assets/readme/features/nav-loggedin.png)
+
+- A dropdown menu is adopted on smaller screen sizes
+
+![Navbar on mobile](assets/readme/features/nav-expanded.png)
+
+### Categories slide
+
+![Categories slide](assets/readme/features/categories.png)
+
+- The categories slide is rendered on nearly every page to facilitate navigation and easy access to the categories in order to find posts.
+Due to this implementation it was decided not to include a standalone page that contains only the categories.
+- This turns into vertical scrolling on smaller screens.
+
+### Category Page
+
+![Category page-Food](assets/readme/features/category-selected.png)
+
+![Category page-Outdoors](assets/readme/features/category-selected-1.png)
+
+- When a category is active it is highlighted.
+
+### Contact Us
+
+![Contact Us page](assets/readme/features/contact-us.png)
+
+- The Contact us page allows users to get in touch with the blog owner by filling out the form provided. This form is then registered to the database and will appear on the Admin Panel
+
+### About
+
+![About page](assets/readme/features/about.png)
+
+- Tells a little story, helping users to get a better feel about the purpose of the page
+
+### Post detail
+
+![Post detail image](assets/readme/features/post-detail.png)
+
+- Contains the title, the uploaded image(or placholder) and the details of the author, including the date
+Also has a like functionality attached, so the post can be liked or unliked
+- The Content section is situated right below the post image, followed by the comment section
+
+![Edit and Delete is author](assets/readme/features/comments-with-button.png)
+
+- If the user is authenticated has the possibility to leave a comment
+- If the user is the author of the comment the `Edit` and `Comment` buttons are also visible next to it
+
+![Edit Comment](assets/readme/features/redirect-edit-page.png)
+
+- The Edit features redirects to another page and the user can Edit their own comment, then Update it
+
+![Delete Modal](assets/readme/features/delete-modal.png)
+
+- If clicked, the `Delete` button opens up a confirmation modal for a second prompt 
+
+### Sign Up Page
+
+![Sign Up Page](assets/readme/features/Sign-Up.png)
+
+- Possibility to Sign Up for the user, by filling in their details and submitting the form
+
+### Login Page
+
+![Login Page](assets/readme/features/sign-in.png)
+
+- Registered Users can log in, once their credentials are validated through the form
+
+### Sign Out Page
+
+![Sign Out](assets/readme/features/sign-out.png)
+
+- If a user is authenticated they can sign out from their profile by confirming they want to leave
+
+### Footer
+
+![Footer](assets/readme/features/footer.png)
+
+- The footer is simple, giving access to the user to the social links
+
+### Messages
+
+- Messages are used to confirm user interaction with the website. They appear on the top of the page and fade out.
+
+![Sign In Success](assets/readme/features/sign-in-success.png)
+![Comment deleted](assets/readme/features/comment-delete-message.png)
+
+- Messages pop up with every user interaction
+
+![Post liked](assets/readme/features/Post-liked.png)
+
+## Responsiveness
+
+
 ## TECHNOLOGIES
 
 ### LANGUAGES
